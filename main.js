@@ -85,22 +85,37 @@ $(document).ready(function () {
         }
       }
     });
+     //Form submission
+    $('#form').submit(function(e) {
+      e.preventDefault();
+      
+      // Validate name
+      if ($('#name').val().length < 2) {
+        alert('Please enter your name');
+        return;
+      }
+      
+      // Validate email
+      if ($('#email').val().indexOf('@') === -1) {
+        alert('Please enter a valid email address');
+        return;
+      }
+      
+      // Validate subject
+      if ($('#subject').val().length < 5) {
+        alert('Please enter a subject');
+        return;
+      }
+      
+      // Validate message
+      if ($('#message').val().length < 5) {
+        alert('Please enter a message');
+        return;
+      }
+      
+      // If all validations pass, submit the form
+      $(this)[0].submit(); // Use [0] to get the native form element
+    });
 
-      $("#contactForm").submit(function(event) {
-        event.preventDefault();
-    
-        // Get form data
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var subject = $("#subject").val();
-        var message = $("#message").val();
-        var yourEmail = $("hiddenEmail").val(); // Assuming a hidden field with your email
-    
-        // Construct mailto link
-        var mailtoLink = "mailto:" + yourEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(name + ": " + message);
-    
-        // Open mailto link
-        window.open(mailtoLink);
-      });
   });
   
