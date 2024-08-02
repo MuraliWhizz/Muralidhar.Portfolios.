@@ -36,25 +36,29 @@ $(document).ready(function () {
     // typing text animation script
     var typed = new Typed(".typing", {
       strings: [
-        "Computer Science and Engineer.",
-        "Data Structures and Algorithms Enthusiast.",
-        "Python Developer.",
-        "Lifelong Learner.",
-        "Web Designer.",
-        "Database Management Expert." ],
+        "Computer Science Engineer.",
+        "Passionate Software Engineer.",
+        "Full-Stack Developer.",
+        "Software Developer.",
+        "Linux System Administrator.",
+        "Cloud Computing Enthusiast.",
+        "Data Analysis Enthusiast.",
+        "Lifelong learner 🤓💡." ],
       typeSpeed: 100,
-      backSpeed: 60,
+      backSpeed: 50,
       loop: true
     });
-  
+
     var typed = new Typed(".typing-2", {
       strings: [
-        "Computer Science and Engineer.",
-        "Data Structures and Algorithms Enthusiast.",
-        "Python Developer.",
-        "Lifelong Learner.",
-        "Web Designer.",
-        "Database Management Expert." ],
+       "Computer Science Engineer.",
+        "Passionate Software Engineer.",
+        "Full-Stack Developer.",
+        "Software Developer.",
+        "Linux System Administrator.",
+        "Cloud Computing Enthusiast.",
+        "Data Analysis Enthusiast.",
+        "Lifelong learner 🤓💡."],
       typeSpeed: 100,
       backSpeed: 60,
       loop: true
@@ -81,5 +85,22 @@ $(document).ready(function () {
         }
       }
     });
+
+      $("#contactForm").submit(function(event) {
+        event.preventDefault();
+    
+        // Get form data
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var subject = $("#subject").val();
+        var message = $("#message").val();
+        var yourEmail = $("hiddenEmail").val(); // Assuming a hidden field with your email
+    
+        // Construct mailto link
+        var mailtoLink = "mailto:" + yourEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(name + ": " + message);
+    
+        // Open mailto link
+        window.open(mailtoLink);
+      });
   });
   
