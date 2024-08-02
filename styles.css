@@ -340,7 +340,7 @@ section .title::after {
 .services .title::after,
 .teams .title::after {
   background: #111;
-  content: "What I provide";
+  content: "What I Did";
 }
 
 .services .serv-content .card {
